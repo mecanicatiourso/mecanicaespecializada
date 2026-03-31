@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotina Pro | Agenda do Empreendedor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700;800&family=Sora:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Agenda semanal</p>
+          <h1>Organize os 7 dias da semana por horario e tipo de atividade.</h1>
+          <p class="hero-text">
+            Segunda a domingo em ordem fixa, com horarios organizados dentro de cada dia e lembretes prontos para cada rotina.
+          </p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#planner">Abrir agenda</a>
+            <a class="button-secondary" href="#cadastro">Nova atividade</a>
+          </div>
+        </div>
+
+        <aside class="hero-summary">
+          <p class="summary-label">Resumo</p>
+          <div class="summary-grid" id="summaryGrid"></div>
+          <div class="finance-overview" id="financeOverview"></div>
+          <p class="finance-note">
+            O financeiro e manual: ele usa o valor previsto e o custo previsto informados em cada atividade.
+          </p>
+          <p class="summary-note">
+            Clique em uma atividade para abrir itens, preparacao e detalhes.
+          </p>
+        </aside>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel planner-panel" id="planner">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Semana operacional</p>
+              <h2>Agenda por dia da semana</h2>
+            </div>
+            <div class="chip-row" id="filterChips" aria-label="Filtrar por tipo"></div>
+          </div>
+
+          <div class="schedule-grid" id="scheduleGrid"></div>
+        </section>
+
+        <section class="panel detail-panel">
+          <div class="section-heading section-heading-tight">
+            <div>
+              <p class="eyebrow">Painel da atividade</p>
+              <h2 id="detailTitle">Selecione uma atividade</h2>
+            </div>
+            <span class="detail-badge" id="detailBadge">Sem selecao</span>
+          </div>
+
+          <div class="detail-meta" id="detailMeta"></div>
+
+          <div class="icon-actions" id="iconActions">
+            <button class="icon-button is-active" type="button" data-tab="checklist" aria-label="Abrir checklist">
+              <span class="icon-shell">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9.4 16.6 5.8 13l1.4-1.4 2.2 2.2 7.4-7.4 1.4 1.4z" />
+                  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9v2H5v14h14V10h2v9a2 2 0 0 1-2 2Z" />
+                </svg>
+              </span>
+              <span>Itens</span>
+            </button>
+            <button class="icon-button" type="button" data-tab="preparation" aria-label="Abrir preparacao">
+              <span class="icon-shell">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2a7 7 0 0 0-4 12.7V18a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3.3A7 7 0 0 0 12 2Zm2 15h-4v-1h4Zm.2-4.1-.2.1h-4l-.2-.1A5 5 0 1 1 17 9a4.9 4.9 0 0 1-2.8 3.9Z" />
+                </svg>
+              </span>
+              <span>Preparar</span>
+            </button>
+            <button class="icon-button" type="button" data-tab="notes" aria-label="Abrir observacoes">
+              <span class="icon-shell">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 4h12v2H6zM6 9h12v2H6zM6 14h8v2H6z" />
+                  <path d="M4 2h16a2 2 0 0 1 2 2v16l-4-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 13h14.7l1.3 1V4H4Z" />
+                </svg>
+              </span>
+              <span>Detalhes</span>
+            </button>
+          </div>
+
+          <div class="detail-body" id="detailBody"></div>
+        </section>
+
+        <section class="panel form-panel" id="cadastro">
+          <div class="section-heading section-heading-tight">
+            <div>
+              <p class="eyebrow">Cadastro rapido</p>
+              <h2 id="formTitle">Adicionar ou ajustar atividade</h2>
+            </div>
+            <span class="detail-badge" id="formModeBadge">Novo cadastro</span>
+          </div>
+
+          <form id="activityForm" class="activity-form">
+            <input type="hidden" name="activityId" />
+
+            <label class="field">
+              <span>Dia da semana</span>
+              <select name="day" required></select>
+            </label>
+
+            <label class="field">
+              <span>Horario</span>
+              <input type="time" name="time" required />
+            </label>
+
+            <label class="field">
+              <span>Tipo de atividade</span>
+              <select name="type" required></select>
+            </label>
+
+            <label class="field field-wide">
+              <span>Titulo curto</span>
+              <input type="text" name="title" placeholder="Ex.: Corridas no centro" required />
+            </label>
+
+            <label class="field field-wide">
+              <span>Observacoes</span>
+              <textarea name="notes" rows="4" placeholder="Ex.: trabalhar ate 13h e fazer abastecimento no fim do turno"></textarea>
+            </label>
+
+            <label class="field">
+              <span>Valor previsto (R$)</span>
+              <input type="number" name="expectedAmount" min="0" step="0.01" placeholder="0,00" />
+            </label>
+
+            <label class="field">
+              <span>Custo previsto (R$)</span>
+              <input type="number" name="estimatedCost" min="0" step="0.01" placeholder="0,00" />
+            </label>
+
+            <div class="form-actions">
+              <button class="button-primary" type="submit" id="submitButton">Salvar atividade</button>
+              <button class="button-secondary" type="button" id="cancelEditButton">Cancelar edicao</button>
+              <button class="button-secondary" type="button" id="resetButton">Restaurar semana inicial</button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
