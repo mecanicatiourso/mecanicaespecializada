@@ -1,12 +1,29 @@
-# Rotina Pro Semanal
+# Tio Urso Oficina Mecânica
 
-Aplicativo web estático para organizar atividades de um pequeno empreendedor pelos 7 dias da semana, por horário e por tipo de atividade.
+Site institucional estático da oficina mecânica Tio Urso, com foco em apresentação da empresa, contato, agendamento de orçamento e espaço preparado para dicas e vídeos.
 
-## Publicação com GitHub Pages
+## Estrutura
 
-1. Crie o repositório `rotina-pro-semanal` no GitHub.
-2. Envie os arquivos deste projeto para a branch `main`.
-3. No GitHub, abra `Settings > Pages`.
-4. Em `Build and deployment`, escolha `Deploy from a branch`.
-5. Selecione a branch `main` e a pasta `/root`.
-6. Salve e aguarde o link público ser gerado.
+- `index.html`: página principal do site
+- `styles.css`: estilos da interface
+- `app.js`: comportamento do formulário, dicas e área de vídeos
+
+## Publicação no GitHub Pages
+
+Segundo a documentação oficial do GitHub, para sites estáticos simples o caminho recomendado é publicar direto de uma branch do repositório. A URL esperada deste projeto, quando o Pages estiver ativo, é:
+
+`https://ligiafigueiredo.github.io/tio_urso/`
+
+Passos no GitHub:
+
+1. Abra o repositório `tio_urso`.
+2. Entre em `Settings > Pages`.
+3. Em `Build and deployment`, escolha `Deploy from a branch`.
+4. Selecione a branch `main`.
+5. Selecione a pasta `/ (root)`.
+6. Salve e aguarde a publicação.
+
+Referências:
+
+- [What is GitHub Pages?](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
+- [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
