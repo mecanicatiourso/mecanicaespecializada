@@ -25,7 +25,8 @@
       <nav class="main-nav" aria-label="Navegação principal">
         <a href="#quem-somos">Quem somos</a>
         <a href="#missao">Missão</a>
-        <a href="#agendamento">Agendamento</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#videos">Vídeos</a>
         <a href="#dicas">Dicas</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -35,16 +36,16 @@
       <section class="hero">
         <div class="hero-content">
           <p class="eyebrow">Diagnóstico, manutenção e confiança</p>
-          <h1>Cuidamos do seu carro com experiência e responsabilidade.</h1>
+          <h1>Cuidamos do seu carro com experiência, critério técnico e atendimento direto.</h1>
           <p class="hero-text">
-            Serviços para veículos leves com atenção técnica em injeção eletrônica, arrefecimento, suspensão,
+            Serviços para veículos leves com atenção especializada em injeção eletrônica, arrefecimento, suspensão,
             elétrica e motores.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#agendamento">Solicitar orçamento no local</a>
-            <a class="button button-secondary" href="https://wa.me/5512996497973" target="_blank" rel="noreferrer">
+            <a class="button button-primary" href="https://wa.me/5512996497973" target="_blank" rel="noreferrer">
               Chamar no WhatsApp
             </a>
+            <a class="button button-secondary" href="#contato">Ver contato</a>
           </div>
         </div>
       </section>
@@ -66,7 +67,7 @@
         </article>
       </section>
 
-      <section class="services-band">
+      <section class="services-band" id="servicos">
         <div class="section-heading">
           <p class="eyebrow">Especialidades</p>
           <h2>Serviços automotivos para o dia a dia do seu veículo</h2>
@@ -75,7 +76,7 @@
         <div class="service-list">
           <article>
             <h3>Injeção eletrônica</h3>
-            <p>Diagnóstico de falhas, análise de sensores e avaliação do funcionamento do motor.</p>
+            <p>Diagnóstico de falhas, análise de sensores e avaliação precisa do funcionamento do motor.</p>
           </article>
           <article>
             <h3>Arrefecimento</h3>
@@ -92,65 +93,17 @@
         </div>
       </section>
 
-      <section class="appointment-section" id="agendamento">
+      <section class="media-section" id="videos">
         <div class="section-heading">
-          <p class="eyebrow">Agendamento</p>
-          <h2>Escolha um horário para orçamento</h2>
+          <p class="eyebrow">Conteúdo útil</p>
+          <h2>Vídeos para orientar e aproximar você da manutenção certa</h2>
           <p>
-            Atendemos de segunda a sexta-feira, das 7h30 às 18h. Os horários para orçamento vão das 7h30 às
-            16h30, com intervalos de 30 minutos.
+            Este espaço está preparado para receber vídeos do YouTube com orientações, demonstrações e cuidados
+            práticos sobre o seu veículo.
           </p>
         </div>
 
-        <div class="appointment-layout">
-          <form class="appointment-form" id="appointmentForm">
-            <label>
-              Nome
-              <input type="text" name="name" placeholder="Seu nome" required />
-            </label>
-
-            <label>
-              WhatsApp ou celular
-              <input type="tel" name="phone" placeholder="(12) 99999-9999" required />
-            </label>
-
-            <label>
-              Dia
-              <select name="day" id="daySelect" required></select>
-            </label>
-
-            <label>
-              Horário
-              <select name="time" id="timeSelect" required></select>
-            </label>
-
-            <label>
-              Tipo de atendimento
-              <select name="service" id="serviceSelect" required></select>
-            </label>
-
-            <label class="full-field">
-              Observações
-              <textarea
-                name="notes"
-                rows="4"
-                placeholder="Conte brevemente o que está acontecendo com o veículo."
-              ></textarea>
-            </label>
-
-            <button class="button button-primary full-field" type="submit">Preparar solicitação</button>
-            <p class="form-feedback" id="formFeedback" role="status"></p>
-          </form>
-
-          <div class="video-panel">
-            <h3>Vídeos para o cliente</h3>
-            <div class="video-grid" id="videoGrid" aria-label="Vídeos do YouTube"></div>
-            <p>
-              Este campo está preparado para receber vídeos puxados do YouTube sobre cuidados, diagnóstico e
-              manutenção do veículo.
-            </p>
-          </div>
-        </div>
+        <div class="video-grid" id="videoGrid" aria-label="Vídeos do YouTube"></div>
       </section>
 
       <section class="tips-section" id="dicas">
@@ -175,6 +128,7 @@
             <a href="https://wa.me/5512996497973" target="_blank" rel="noreferrer">(12) 99649-7973</a>
           </p>
           <p>Horário de funcionamento: das 7h30 às 18h.</p>
+          <p>Atendimento com foco em diagnóstico, clareza no serviço e confiança no resultado.</p>
         </div>
         <a class="button button-primary" href="https://wa.me/5512996497973" target="_blank" rel="noreferrer">
           Solicitar diagnóstico

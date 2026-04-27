@@ -39,8 +39,7 @@ a {
   color: inherit;
 }
 
-button,
-select {
+button {
   cursor: pointer;
 }
 
@@ -113,13 +112,13 @@ select {
 }
 
 .hero {
-  min-height: 76vh;
+  min-height: 78vh;
   display: grid;
   align-items: end;
-  padding: clamp(90px, 12vw, 150px) clamp(18px, 4vw, 56px) 70px;
+  padding: clamp(90px, 12vw, 150px) clamp(18px, 4vw, 56px) 72px;
   background:
-    linear-gradient(90deg, rgba(6, 26, 51, 0.96), rgba(6, 26, 51, 0.78), rgba(6, 26, 51, 0.48)),
-    url("https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1800&q=80") center / cover;
+    linear-gradient(90deg, rgba(6, 26, 51, 0.97), rgba(6, 26, 51, 0.82), rgba(6, 26, 51, 0.42)),
+    url("https://images.pexels.com/photos/6870295/pexels-photo-6870295.jpeg?auto=compress&cs=tinysrgb&w=1600") center / cover;
 }
 
 .hero-content {
@@ -129,7 +128,7 @@ select {
 .hero-content,
 .section-grid,
 .services-band > *,
-.appointment-section > *,
+.media-section > *,
 .tips-section > *,
 .contact-section,
 .site-footer,
@@ -157,9 +156,9 @@ p {
 
 h1 {
   margin-bottom: 18px;
-  font-size: clamp(1.85rem, 4vw, 3.7rem);
-  line-height: 1.05;
-  max-width: 13ch;
+  font-size: clamp(2rem, 4vw, 3.9rem);
+  line-height: 1.03;
+  max-width: 12ch;
 }
 
 h2 {
@@ -179,11 +178,10 @@ p {
 
 .hero-text {
   max-width: 650px;
-  font-size: 1.12rem;
+  font-size: 1.05rem;
 }
 
-.hero-actions,
-.contact-section {
+.hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -227,7 +225,7 @@ p {
 
 .section-grid,
 .services-band,
-.appointment-section,
+.media-section,
 .tips-section,
 .contact-section {
   padding: clamp(44px, 8vw, 72px) clamp(18px, 4vw, 56px);
@@ -242,8 +240,7 @@ p {
 
 .info-block,
 .service-list article,
-.appointment-form,
-.video-panel,
+.video-card,
 .tips-grid article {
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -263,6 +260,10 @@ p {
   background: var(--navy);
 }
 
+.media-section {
+  background: var(--navy-soft);
+}
+
 .section-heading {
   max-width: 780px;
   margin-bottom: 28px;
@@ -273,9 +274,10 @@ p {
 }
 
 .service-list,
-.tips-grid {
+.tips-grid,
+.video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
 }
 
@@ -289,81 +291,7 @@ p {
   color: var(--white);
 }
 
-.appointment-section {
-  background: var(--navy-soft);
-}
-
-.appointment-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: 18px;
-  align-items: start;
-}
-
-.appointment-form {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  padding: 22px;
-}
-
-label {
-  display: grid;
-  gap: 8px;
-  color: var(--white);
-  font-weight: 700;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 13px 14px;
-  background: rgba(255, 255, 255, 0.96);
-  color: #07172b;
-  outline: none;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(244, 124, 32, 0.22);
-}
-
-textarea {
-  resize: vertical;
-}
-
-.full-field {
-  grid-column: 1 / -1;
-}
-
-.form-feedback {
-  grid-column: 1 / -1;
-  min-height: 24px;
-  margin: 0;
-  color: var(--white);
-  font-weight: 700;
-}
-
-.video-panel {
-  padding: 22px;
-  background: var(--navy-panel);
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-  margin-bottom: 16px;
-}
-
 .video-card {
-  border: 1px solid var(--border);
-  border-radius: 8px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.07);
 }
@@ -404,7 +332,6 @@ textarea {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 18px;
   align-items: center;
-  justify-content: space-between;
   background: var(--navy-soft);
 }
 
@@ -482,10 +409,7 @@ textarea {
 @media (max-width: 1100px) {
   .hero {
     min-height: 68vh;
-  }
-
-  .appointment-layout {
-    grid-template-columns: 1fr;
+    background-position: center;
   }
 }
 
@@ -502,7 +426,6 @@ textarea {
   }
 
   .section-grid,
-  .appointment-layout,
   .contact-section {
     grid-template-columns: 1fr;
   }
@@ -540,16 +463,17 @@ textarea {
   }
 
   h1 {
-    max-width: 14ch;
+    max-width: 13ch;
   }
 
   .hero {
-    min-height: 62vh;
-    background-position: center right;
+    min-height: 64vh;
+    align-items: center;
+    background-position: 68% center;
   }
 
   .hero-text {
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 
   .site-footer {
@@ -559,10 +483,10 @@ textarea {
 
 @media (max-width: 620px) {
   .hero {
-    min-height: 70vh;
-    align-items: center;
-    padding-top: 64px;
-    padding-bottom: 52px;
+    min-height: auto;
+    padding-top: 58px;
+    padding-bottom: 44px;
+    background-position: 72% center;
   }
 
   .hero-actions,
@@ -570,7 +494,6 @@ textarea {
     gap: 10px;
   }
 
-  .appointment-form,
   .service-list,
   .tips-grid,
   .video-grid {
@@ -586,6 +509,10 @@ textarea {
   }
 
   .main-nav a {
+    width: 100%;
+  }
+
+  .contact-section .button {
     width: 100%;
   }
 }
@@ -605,7 +532,7 @@ textarea {
   }
 
   h1 {
-    font-size: 1.65rem;
+    font-size: 1.7rem;
     max-width: 100%;
   }
 
@@ -617,12 +544,6 @@ textarea {
     line-height: 1.6;
   }
 
-  .hero {
-    min-height: auto;
-    padding-top: 48px;
-    padding-bottom: 44px;
-  }
-
   .hero-actions .button,
   .contact-section .button {
     min-height: 44px;
@@ -632,9 +553,8 @@ textarea {
 
   .info-block,
   .service-list article,
-  .appointment-form,
-  .video-panel,
-  .tips-grid article {
+  .tips-grid article,
+  .video-card p {
     padding: 18px;
   }
 
